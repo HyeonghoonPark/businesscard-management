@@ -11,5 +11,5 @@
 *.DS_Store
 **/node_modules
 **/security.properties
-
+**/jdbc.properties
 !build.gradle
