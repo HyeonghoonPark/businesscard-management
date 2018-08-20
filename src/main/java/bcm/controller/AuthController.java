@@ -2,6 +2,8 @@ package bcm.controller;
 
 import java.util.HashMap;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,9 +54,26 @@ public class AuthController {
 	}
 	
 	@PostMapping("SignIn")
-	public Object SignIn() {
+	public Object SignIn(BcmUser user, HttpSession session) {
 		
-		return 1;
+		HashMap<String,Object> resultMap = new HashMap<>();
+		
+		
+		try {
+			BcmUser loginUser = authService.getMember(user); 
+
+			if(loginUser == null)throw new Exception("오류입니다.");
+		
+			session.setAttribute("user", loginUser);
+			resultMap.put("state","success");
+		
+		}catch(Exception e) {
+			resultMap.put("state", "error");
+			resultMap.put("message", e.getMessage());
+		}
+		
+		
+		return resultMap;
 	}
 	
 	

@@ -7,4 +7,6 @@ public interface AuthService {
 	int add(BcmUser user);
 	
 	int identify(String email);
+
+	BcmUser getMember(BcmUser user);
 }

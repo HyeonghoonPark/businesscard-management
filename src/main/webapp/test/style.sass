@@ -1,8 +1,30 @@
+/**
+ * General variables
+ */
+$bdrds: 3px
+
+$white: #fff
+$black: #000
+$gray: #ccc
+$salmon: #e8716d
+$smoky-black: rgba(#222222, .85)
+
+$ff: 'Montserrat', sans-serif
+$ff-body: 12px
+$ff-light: 300
+$ff-regular: 400
+$ff-medium: 500
+
+
+/**
+ * General configs
+ */
+*
   box-sizing: border-box
 
 body
-  font-family: 'Montserrat', sans-serif
-  font-size: 12px
+  font-family: $ff
+  font-size: $ff-body
   line-height: 1em
   
 button
@@ -23,10 +45,10 @@ input
     
   &::placeholder
     font-size: .85rem
-    font-family: 'Montserrat', sans-serif
-    font-weight: 300
+    font-family: $ff
+    font-weight: $ff-light
     letter-spacing: .1rem
-    color: #ccc
+    color: $gray
 
     
 /**
@@ -86,8 +108,8 @@ input
     display: flex
     justify-content: space-between
     width: 100%
-    background-color: rgba(#222222, .85)
-    border-radius: 3px
+    background-color: $smoky-black
+    border-radius: $bdrds
 
 
 /**
@@ -98,8 +120,8 @@ input
   width: 50%
   padding: 75px 45px
 
-  color: #fff
-  font-weight: 300
+  color: $white
+  font-weight: $ff-light
 
 .user_registered-title,
 .user_unregistered-title
@@ -115,11 +137,11 @@ input
 .user_registered-login,
 .user_unregistered-signup
   margin-top: 30px
-  border: 1px solid #ccc
-  border-radius: 3px
+  border: 1px solid $gray
+  border-radius: $bdrds
   padding: 10px 30px
 
-  color: #fff
+  color: $white
   text-transform: uppercase
   line-height: 1em
   letter-spacing: .2rem
@@ -127,8 +149,8 @@ input
   transition: background-color .2s ease-in-out, color .2s ease-in-out
 
   &:hover
-    color: rgba(#222222, .85)
-    background-color: #ccc
+    color: $smoky-black
+    background-color: $gray
 
 
 /**
@@ -141,9 +163,9 @@ input
 
   width: calc(50% - 30px)
   min-height: 420px
-  background-color: #fff
-  border-radius: 3px
-  box-shadow: 2px 0 15px rgba(#000, .25)
+  background-color: $white
+  border-radius: $bdrds
+  box-shadow: 2px 0 15px rgba($black, .25)
   overflow: hidden
 
   transform: translate3d(100%, -50%, 0)
@@ -157,10 +179,10 @@ input
       margin-bottom: 45px
 
       font-size: 1.5rem
-      font-weight: 500
+      font-weight: $ff-medium
       line-height: 1em
       text-transform: uppercase
-      color: #e8716d
+      color: $salmon
       letter-spacing: .1rem
 
     &_field
@@ -169,19 +191,19 @@ input
 
     &_field-input
       width: 100%
-      border-bottom: 1px solid #ccc
+      border-bottom: 1px solid $gray
       padding: 6px 20px 6px 0
 
-      font-family: 'Montserrat', sans-serif
+      font-family: $ff
       font-size: 1rem
-      font-weight: 300
-      color: darken(#ccc, 30%)
+      font-weight: $ff-light
+      color: darken($gray, 30%)
       letter-spacing: .1rem
 
       transition: border-color .2s ease-in-out
 
       &:focus
-        border-color: darken(#ccc, 30%)
+        border-color: darken($gray, 30%)
 
     &_buttons
       display: flex
@@ -191,32 +213,32 @@ input
       margin-top: 35px
 
       &-forgot
-        font-family: 'Montserrat', sans-serif
+        font-family: $ff
         letter-spacing: .1rem
-        color: #ccc
+        color: $gray
         text-decoration: underline
 
         transition: color .2s ease-in-out
 
         &:hover
-          color: darken(#ccc, 10%)
+          color: darken($gray, 10%)
 
       &-action
-        background-color: #e8716d
-        border-radius: 3px
+        background-color: $salmon
+        border-radius: $bdrds
         padding: 10px 35px
 
         font-size: 1rem
-        font-family: 'Montserrat', sans-serif
-        font-weight: 300
-        color: #fff
+        font-family: $ff
+        font-weight: $ff-light
+        color: $white
         text-transform: uppercase
         letter-spacing: .1rem
 
         transition: background-color .2s ease-in-out
 
         &:hover
-          background-color: darken(#e8716d, 10%)
+          background-color: darken($salmon, 10%)
 
   .user_forms-signup,
   .user_forms-login
@@ -282,4 +304,3 @@ input
   .user_options-registered,
   .user_options-unregistered
     padding: 50px 45px
-

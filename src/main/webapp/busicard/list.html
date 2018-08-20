@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header style="float">
+   <div class="logo">
+     <i class="ion-ionic logo__icon"></i>
+  </div>
+  <nav>
+     <div class="search-bar">
+       <form class="search">
+         <input type="search" class="search__input" name="search" placeholder="Search" onload="equalWidth()" required>
+         <button class="search__btn">Search</button>
+         <i class="ion-ios-search search__icon"></i>
+       </form>
+       <div class="suggestion">
+         <div class="suggestion__content">
+           <div class="suggestion__content-left-side">
+            <h5>Popular Categories</h5>
+            <ul>
+              <li>Marketing Material</li>
+              <li>Just Sold</li>
+              <li>Small Business Card</li>
+              <li>Mailing</li>
+              <li>Just List</li>
+            <ul>  
+           </div>
+           <div class="suggestion__content-right-side">
+            <h5>Popular Keywords</h5>
+            <ul>
+              <li>Business Card</li>
+              <li>Brochures</li>
+              <li>Just List Just Sold</li>
+              <li>Flyers</li>
+            </ul>   
+           </div>
+         </div>  
+       </div>  
+    </div>  
+  </nav>
+  <div class="menu">
+    <i class="ion-drag menu__icon"></i>
+  </div>  
+</header>
+    
+<div class="message" style="display: none">
+  <p>Search with suggestion is supported for devices with width larger than 600px. You can click on the search icon to show the search bar.</p>
+</div>  
+
+<br><br>
+
+<div class="row">
+
+<div class="accordion col-md-5" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Collapsible Group Item #1
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Collapsible Group Item #2
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Collapsible Group Item #3
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-7">
+ggg
+</div>
+
+</div> <!-- .row -->
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/popper.js/dist/popper.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script>
+
+var input = document.querySelector('.search__input');
+var inputWidth = input.offsetWidth;
+var suggestion = document.querySelector('.suggestion');
+var mobileSearch = document.querySelector('.search__icon');
+var menu = document.querySelector('.menu');
+var logo = document.querySelector('.logo');
+var logoIcon = logo.querySelector('.logo__icon');
+
+   
+function equalWidth() {
+  var input = document.querySelector('.search__input');
+  var inputWidth = input.offsetWidth;
+  suggestion.style.width = inputWidth + "px" ;
+}
+
+function showSuggestion() {
+  suggestion.classList.add('active');
+}
+
+function hideSuggestion() {
+  suggestion.classList.remove('active');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  equalWidth();
+  input.addEventListener('focus', showSuggestion);
+})
+
+document.addEventListener('click', function(e) {
+  var target = e.target.className;
+  e.stopPropagation();
+  if (target != "search__input" && target != "suggestion__content-left-side" && target != "suggestion__content-right-side" && target != "suggestion__content" ) {
+    hideSuggestion();
+    console.log(target);
+  }
+});
+
+var addEvent = function(object, type, callback) {
+    if (object == null || typeof(object) == 'undefined') return;
+    if (object.addEventListener) {
+        object.addEventListener(type, callback, false);
+    } else if (object.attachEvent) {
+        object.attachEvent("on" + type, callback);
+    } else {
+        object["on"+type] = callback;
+    }
+};
+
+addEvent(window, 'resize', function(event) {
+  suggestion.style.width = '';
+  equalWidth();
+});
+
+function openMobileSearch() {
+  logo.classList.toggle('hide-element');
+  menu.classList.toggle('hide-element');
+  input.classList.toggle('mobile-search');
+  mobileSearch.classList.toggle('ion-ios-search');
+  mobileSearch.classList.toggle('ion-close-round');
+  mobileSearch.classList.toggle('close-icon');
+}
+
+mobileSearch.addEventListener('click', function() {
+  openMobileSearch();
+})
+</script>
+  
+</body>
+</html>

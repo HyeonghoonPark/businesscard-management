@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!--
+  This was created based on the Dribble shot by Deepak Yadav that you can find at https://goo.gl/XRALsw
+  I am @hurickkrugner on Twitter or @hk95 on GitHub. Feel free to message me anytime.
+-->
+
+<section class="user">
+
+<div style="position: absolute; top:10%; color:white;">
+<h1>명함 관리 시스템</h1>
+</div>
+	
+  <div class="user_options-container">
+    <div class="user_options-text">
+      <div class="user_options-unregistered">
+        <h2 class="user_unregistered-title">계정이 없으신가요?</h2>
+        <p class="user_unregistered-text">지금 가입하시고 편한하게 명함관리를 해보세요!</p>
+        <button class="user_unregistered-signup" id="signup-button">가입하기</button>
+      </div>
+
+      <div class="user_options-registered">
+        <h2 class="user_registered-title">계정이 있으신가요?</h2>
+        <p class="user_registered-text">로그인하셔서 간편하게 명함을 등록해보세요!</p>
+        <button class="user_registered-login" id="login-button">로그인</button>
+      </div>
+    </div>
+    
+    <div class="user_options-forms" id="user_options-forms">
+      <div class="user_forms-login">
+        <h2 class="forms_title">로그인</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="email" placeholder="이메일을 입력해주세요" class="forms_field-input" required autofocus />
+            </div>
+            <div class="forms_field">
+              <input type="password" placeholder="비밀번호를 입력해주세요" class="forms_field-input" required />
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <button type="button" class="forms_buttons-forgot">비밀번호 찾기</button>
+            <input type="submit" value="로그인하기" class="forms_buttons-action">
+          </div>
+          <input type="checkbox">아이디 기억하기
+        </form>
+      </div>
+      <div class="user_forms-signup">
+        <h2 class="forms_title">회원가입</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="email" placeholder="이메일을 입력해주세요" class="forms_field-input" required />
+            </div>
+            <div class="forms_field">
+              <input type="password" placeholder="비밀번호를 입력해주세요" class="forms_field-input" required />
+            </div>
+            <div class="forms_field">
+              <input type="password" placeholder="비밀번호를 확인해주세요" class="forms_field-input" required />
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <input type="button" value="가입하기" class="forms_buttons-action">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+
+/**
+ * Variables
+ */
+const signupButton = document.getElementById('signup-button'),
+    loginButton = document.getElementById('login-button'),
+    userForms = document.getElementById('user_options-forms')
+
+/**
+ * Add event listener to the "Sign Up" button
+ */
+signupButton.addEventListener('click', () => {
+  userForms.classList.remove('bounceRight')
+  userForms.classList.add('bounceLeft')
+}, false)
+
+/**
+ * Add event listener to the "Login" button
+ */
+loginButton.addEventListener('click', () => {
+  userForms.classList.remove('bounceLeft')
+  userForms.classList.add('bounceRight')
+}, false)
+</script>
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/popper.js/dist/popper.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

@@ -21,4 +21,9 @@ public class AuthServiceImpl implements AuthService {
 	public int identify(String email) {
 		return authDao.identifyEamil(email);
 	}
+	
+	@Override
+	public BcmUser getMember(BcmUser user) {
+		return authDao.findByEmailAndPassword(user);
+	}
 }

@@ -11,6 +11,10 @@
 	<select id="identifyEamil" parameterType="String" resultType="Integer">
 		select count(email) from member where email = #{email}
 	</select>
+	
+	<select id="findByEmailAndPassword" parameterType="BcmUser" resultType="BcmUser">
+		select bno, name, email from member where email=#{email} and password=#{password}
+	</select>
 
 	
 </mapper>
